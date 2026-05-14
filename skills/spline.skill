@@ -1,0 +1,54 @@
+# Spline Integration Skill
+
+This skill provides instructions for integrating interactive 3D scenes from Spline into a Next.js application using `@splinetool/react-spline`.
+
+## Core Principles
+
+1. **Client-Side Rendering**: Spline components rely on browser APIs. Always use the `'use client';` directive at the top of any file that imports `@splinetool/react-spline`.
+2. **Performance**: 3D scenes can be heavy. Use `React.Suspense` for loading states and consider `dynamic` imports from `next/dynamic` to lazy-load Spline scenes.
+3. **Responsiveness**: Ensure the container of the Spline component has defined dimensions. Use `w-full h-full` or fixed viewport units.
+
+## Implementation Pattern
+
+### 1. Basic Component
+```tsx
+'use client';
+
+import Spline from '@splinetool/react-spline';
+
+export default function Scene() {
+  return (
+    <div className="w-full h-screen">
+      <Spline scene="https://prod.spline.design/your-scene-id/scene.splinecode" />
+    </div>
+  );
+}
+```
+
+### 2. Advanced Interaction
+To interact with the scene programmatically, use the `onLoad` event to get the `Spline` instance.
+
+```tsx
+'use client';
+
+import { useRef } from 'react';
+import Spline from '@splinetool/react-spline';
+import { Application } from '@splinetool/runtime';
+
+export default function InteractiveScene() {
+  const splineRef = useRef<Application | null>(null);
+
+  function onLoad(splineApp: Application) {
+    splineRef.current = splineApp;
+    // You can now access splineApp.findObjectByName(), splineApp.emitEvent(), etc.
+  }
+
+  return <Spline scene="..." onLoad={onLoad} />;
+}
+```
+
+## Best Practices
+
+- **Background Transparency**: If you want the scene background to be transparent, set it to "None" in the Spline editor and ensure no background color is set in the React component.
+- **Loading UI**: Always provide a fallback UI in `Suspense` to avoid a blank screen while the 3D model loads.
+- **Scroll Hijacking**: Be careful with mouse events in Spline if you have scroll-based navigation in your app. Use `pointer-events-none` on the Spline container if it's just a background element.
