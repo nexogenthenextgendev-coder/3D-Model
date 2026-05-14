@@ -6,7 +6,7 @@ import { motion, AnimatePresence, useSpring, useMotionValue, useTransform } from
 import { Zap, ArrowUpRight, Cpu, Activity, Globe, Play } from 'lucide-react';
 import gsap from 'gsap';
 
-// --- TYPEWRITER COMPONENT (KINETIC NEON THEME) ---
+// --- TYPEWRITER COMPONENT (DARK NETWORK THEME) ---
 function Typewriter({ words }: { words: string[] }) {
   const [index, setIndex] = useState(0);
   const [subIndex, setSubIndex] = useState(0);
@@ -36,10 +36,10 @@ function Typewriter({ words }: { words: string[] }) {
 
   return (
     <span className="relative inline-flex items-center">
-      <span className="bg-gradient-to-r from-[#00F2FF] to-[#CCFF00] bg-clip-text text-transparent italic">
+      <span className="bg-gradient-to-r from-[#00C8FF] via-[#00E0A0] to-[#FFD700] bg-clip-text text-transparent italic">
         {words[index].substring(0, subIndex)}
       </span>
-      <span className={`inline-block w-[3px] h-[0.85em] bg-[#CCFF00] ml-2 rounded-full transform -translate-y-[2px] ${blink ? 'opacity-100' : 'opacity-0'}`} />
+      <span className={`inline-block w-[3px] h-[0.85em] bg-[#00C8FF] ml-2 rounded-full transform -translate-y-[2px] ${blink ? 'opacity-100' : 'opacity-0'}`} />
     </span>
   );
 }
@@ -69,10 +69,10 @@ function Magnetic({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <motion.div 
-      ref={ref} 
-      onMouseMove={handleMouseMove} 
-      onMouseLeave={handleMouseLeave} 
+    <motion.div
+      ref={ref}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
       style={{ x: springX, y: springY }}
       className="flex items-center justify-center py-4 px-2"
     >
@@ -81,7 +81,7 @@ function Magnetic({ children }: { children: React.ReactNode }) {
   );
 }
 
-// --- 3D TILT GLASS CTA (KINETIC NEON ACCENTS) ---
+// --- 3D TILT GLASS CTA (DARK NETWORK ACCENTS) ---
 function Glass3DCTA() {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -112,16 +112,16 @@ function Glass3DCTA() {
     >
       <motion.div
         style={{ rotateX: springX, rotateY: springY }}
-        className="group relative px-10 py-5 rounded-2xl bg-[#CCFF00]/[0.02] border border-[#CCFF00]/10 backdrop-blur-3xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] overflow-hidden mt-1.5"
+        className="group relative px-10 py-5 rounded-2xl bg-[#00C8FF]/[0.03] border border-[#00C8FF]/20 backdrop-blur-3xl shadow-[0_20px_50px_rgba(0,0,0,0.4)] overflow-hidden mt-1.5"
       >
-        <div className="absolute inset-0 bg-gradient-to-tr from-[#00F2FF]/5 via-transparent to-[#CCFF00]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-[#00C8FF]/10 via-transparent to-[#FFD700]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
         <div className="relative flex items-center gap-6">
           <div className="flex flex-col">
-            <span className="text-[12px] font-black uppercase tracking-[0.4em] text-[#CCFF00] opacity-60 leading-none mb-1">Initialize</span>
-            <span className="text-xl font-black uppercase italic tracking-widest text-white leading-none">Experience Core</span>
+            <span className="text-[12px] font-black uppercase tracking-[0.4em] text-[#00E0A0] opacity-80 leading-none mb-1">Initialize</span>
+            <span className="text-xl font-black uppercase italic tracking-widest text-[#E0E0E0] leading-none">Experience Core</span>
           </div>
-          <div className="h-10 w-10 rounded-full bg-[#CCFF00]/10 border border-[#CCFF00]/20 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#CCFF00]/20 transition-all duration-700">
-            <ArrowUpRight className="h-5 w-5 text-[#CCFF00]" />
+          <div className="h-10 w-10 rounded-full bg-[#00C8FF]/10 border border-[#00C8FF]/20 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#FFD700]/20 transition-all duration-700">
+            <ArrowUpRight className="h-5 w-5 text-[#FFD700]" />
           </div>
         </div>
       </motion.div>
@@ -175,21 +175,21 @@ export default function Home() {
   }
 
   return (
-    <main className="relative h-screen w-full overflow-hidden bg-[#050505] text-[#E0E0E0] font-sans selection:bg-[#CCFF00]/30">
+    <main className="relative h-screen w-full overflow-hidden bg-[#121212] text-[#E0E0E0] font-sans selection:bg-[#00C8FF]/30">
       <style jsx global>{`
         #spline-logo, .spline-watermark, a[href*="spline.design"] { display: none !important; }
         ::-webkit-scrollbar { display: none; }
         canvas { background: transparent !important; }
       `}</style>
 
-      {/* --- KINETIC NEON BACKGROUND AMBIENCE --- */}
+      {/* --- DARK NETWORK BACKGROUND AMBIENCE (CYAN/GREEN) --- */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-[-5%] left-[-5%] h-[600px] w-[600px] rounded-full bg-[#CCFF00]/[0.03] blur-[150px]" />
-        <div className="absolute bottom-[-10%] right-[-10%] h-[700px] w-[700px] rounded-full bg-[#00F2FF]/[0.03] blur-[180px]" />
+        <div className="absolute top-[-5%] left-[-5%] h-[600px] w-[600px] rounded-full bg-[#00C8FF]/[0.05] blur-[150px]" />
+        <div className="absolute bottom-[-10%] right-[-10%] h-[700px] w-[700px] rounded-full bg-[#00E0A0]/[0.05] blur-[180px]" />
       </div>
 
       {/* --- SPLINE LAYER --- */}
-      <div 
+      <div
         ref={splineContainerRef}
         className="absolute inset-0 z-10 translate-x-[12%] translate-y-[5%] scale-105 pointer-events-auto"
         style={{ opacity: isLoaded ? 1 : 0 }}
@@ -201,28 +201,28 @@ export default function Home() {
 
       {/* --- CONTENT LAYER --- */}
       <div className="relative z-20 flex h-full w-full flex-col pointer-events-none max-w-[1600px] mx-auto">
-        
-        {/* Navbar (Electric Blue/Neon Green) */}
+
+        {/* Navbar (Cyan/Yellow Accents) */}
         <nav ref={navbarRef} className="flex w-full items-center justify-between px-10 py-5.5 pointer-events-auto" style={{ opacity: isLoaded ? 1 : 0 }}>
           <div className="flex items-center gap-4 group cursor-pointer">
-            <div className="h-12 w-12 rounded-xl bg-[#CCFF00] text-black flex items-center justify-center font-black italic shadow-[0_0_20px_rgba(204,255,0,0.4)] group-hover:scale-110 transition-transform duration-700">A</div>
+            <div className="h-12 w-12 rounded-xl bg-[#00C8FF] text-black flex items-center justify-center font-black italic shadow-[0_0_20px_rgba(0,200,255,0.4)] group-hover:scale-110 transition-transform duration-700">A</div>
             <div className="flex flex-col">
-              <span className="text-2xl font-black tracking-tighter uppercase italic leading-none text-white">Antigravity</span>
-              <span className="text-xs font-bold tracking-[0.4em] text-[#00F2FF] opacity-50 uppercase mt-1">Spatial Neural Core</span>
+              <span className="text-2xl font-black tracking-tighter uppercase italic leading-none text-[#E0E0E0]">Antigravity</span>
+              <span className="text-xs font-bold tracking-[0.4em] text-[#00E0A0] opacity-40 uppercase mt-1">Spatial Neural Core</span>
             </div>
           </div>
 
           <div className="hidden lg:flex items-center gap-14">
             {['Engine', 'Network', 'Ecosystem'].map((item, i) => (
-              <a key={i} href="#" className="text-sm font-bold tracking-[0.3em] text-white/30 uppercase hover:text-[#00F2FF] transition-all relative group pointer-events-auto">
+              <a key={i} href="#" className="text-sm font-bold tracking-[0.3em] text-[#E0E0E0]/40 uppercase hover:text-[#00C8FF] transition-all relative group pointer-events-auto">
                 {item}
-                <span className="absolute -bottom-1 left-0 w-0 h-[1.5px] bg-[#CCFF00] group-hover:w-full transition-all duration-300" />
+                <span className="absolute -bottom-1 left-0 w-0 h-[1.5px] bg-[#00C8FF] group-hover:w-full transition-all duration-300" />
               </a>
             ))}
           </div>
 
           <Magnetic>
-            <button className="h-12 px-10 rounded-full border border-[#CCFF00]/30 bg-[#CCFF00]/5 backdrop-blur-3xl text-xs font-bold tracking-widest uppercase text-[#CCFF00] hover:bg-[#CCFF00] hover:text-black transition-all pointer-events-auto shadow-[0_0_15px_rgba(204,255,0,0.1)]">
+            <button className="h-12 px-10 rounded-full border border-[#FFD700]/30 bg-[#FFD700]/5 backdrop-blur-3xl text-xs font-bold tracking-widest uppercase text-[#FFD700] hover:bg-[#FFD700] hover:text-black transition-all pointer-events-auto shadow-[0_0_15px_rgba(255,215,0,0.1)]">
               Initialize
             </button>
           </Magnetic>
@@ -231,17 +231,17 @@ export default function Home() {
         {/* Hero Section */}
         <div className="flex flex-1 items-center px-10 pb-16">
           <div className="w-full lg:w-[50%] space-y-6">
-            <div className="inline-flex items-center gap-4 rounded-full border border-[#00F2FF]/20 bg-[#00F2FF]/[0.02] px-8 py-3 backdrop-blur-3xl pointer-events-auto shadow-xl gs-reveal-item" style={{ opacity: isLoaded ? 1 : 0 }}>
-              <div className="h-2 w-2 rounded-full bg-[#CCFF00] shadow-[0_0_10px_rgba(204,255,0,0.8)] animate-pulse" />
-              <span className="text-[13px] font-bold tracking-[0.3em] text-[#00F2FF] uppercase">Neural Protocol Active</span>
+            <div className="inline-flex items-center gap-4 rounded-full border border-[#00C8FF]/20 bg-[#00C8FF]/[0.03] px-8 py-3 backdrop-blur-3xl pointer-events-auto shadow-xl gs-reveal-item" style={{ opacity: isLoaded ? 1 : 0 }}>
+              <div className="h-2.5 w-2.5 rounded-full bg-[#00E0A0] shadow-[0_0_10px_rgba(0,224,160,0.8)] animate-pulse" />
+              <span className="text-[13px] font-bold tracking-[0.3em] text-[#00C8FF] uppercase">Neural Protocol Active</span>
             </div>
 
             <div className="space-y-4 gs-reveal-item" style={{ opacity: isLoaded ? 1 : 0 }}>
               <h1 className="text-7xl font-black tracking-tighter xl:text-9xl leading-[0.95] italic min-h-[2em] flex flex-col">
-                <span className="text-white">SPATIAL</span>
+                <span className="text-[#E0E0E0]">SPATIAL</span>
                 <Typewriter words={['NEURAL.', 'FUTURE.', 'SYSTEM.', 'CORE.']} />
               </h1>
-              <div className="h-[2px] w-24 bg-gradient-to-r from-[#00F2FF] to-[#CCFF00] mt-2 rounded-full shadow-[0_0_15px_rgba(0,242,255,0.3)]" />
+              <div className="h-[2px] w-24 bg-gradient-to-r from-[#00C8FF] to-[#00E0A0] mt-2 rounded-full shadow-[0_0_15px_rgba(0,200,255,0.3)]" />
             </div>
 
             <div className="pointer-events-auto pt-8 gs-reveal-item" style={{ opacity: isLoaded ? 1 : 0 }}>
@@ -250,25 +250,25 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Footer Stats */}
+        {/* Footer Stats (Dark Network Accents) */}
         <div className="px-10 pb-16 flex justify-between items-end pointer-events-auto">
           <div className="flex gap-16">
             {[{ label: "Stability", value: "99.9%" }, { label: "Sync", value: "0.2ms" }].map((stat, i) => (
               <div key={i} className="flex flex-col gap-2 min-w-[140px] gs-footer-item" style={{ opacity: isLoaded ? 1 : 0 }}>
-                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#00F2FF]/30">{stat.label}</span>
+                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#00E0A0]/40">{stat.label}</span>
                 <div className="flex items-center gap-3">
-                  <div className="h-[1px] w-6 rounded-full bg-[#CCFF00]/20" />
-                  <span className="text-3xl font-black tracking-tighter bg-gradient-to-b from-white to-white/30 bg-clip-text text-transparent">{stat.value}</span>
+                  <div className="h-1 w-6 rounded-full bg-[#00C8FF]/20" />
+                  <span className="text-3xl font-black tracking-tighter bg-gradient-to-b from-[#E0E0E0] to-[#E0E0E0]/30 bg-clip-text text-transparent">{stat.value}</span>
                 </div>
               </div>
             ))}
           </div>
           <div className="flex flex-col items-end gap-3 gs-footer-item" style={{ opacity: isLoaded ? 1 : 0 }}>
             <div className="flex gap-6 items-center">
-              <div className="h-2 w-2 rounded-full bg-[#CCFF00] shadow-[0_0_10px_rgba(204,255,0,0.5)] animate-ping" />
-              <span className="text-[10px] font-bold tracking-[0.2em] text-[#00F2FF]/40 uppercase tracking-widest">SECURE</span>
+              <div className="h-2 w-2 rounded-full bg-[#FFD700] shadow-[0_0_10px_rgba(255,215,0,0.5)] animate-ping" />
+              <span className="text-[10px] font-bold tracking-[0.2em] text-[#00C8FF]/40 uppercase tracking-widest">SECURE</span>
             </div>
-            <span className="text-[9px] font-black tracking-[0.6em] text-white/5 uppercase italic">ANTIGRAVITY // 2026</span>
+            <span className="text-[9px] font-black tracking-[0.6em] text-[#E0E0E0]/10 uppercase italic">ANTIGRAVITY // 2026</span>
           </div>
         </div>
       </div>
@@ -276,10 +276,10 @@ export default function Home() {
       {/* --- PRELOADER --- */}
       <AnimatePresence>
         {!isLoaded && (
-          <motion.div exit={{ opacity: 0 }} className="fixed inset-0 z-[100] flex items-center justify-center bg-[#050505]">
+          <motion.div exit={{ opacity: 0 }} className="fixed inset-0 z-[100] flex items-center justify-center bg-[#121212]">
             <div className="flex flex-col items-center">
-              <div className="h-10 w-10 border-t border-[#CCFF00] rounded-full animate-spin shadow-[0_0_20px_rgba(204,255,0,0.2)]" />
-              <span className="mt-8 text-[11px] font-bold tracking-[1em] text-[#CCFF00]/20 uppercase">Syncing...</span>
+              <div className="h-12 w-12 border-t-2 border-[#00C8FF] rounded-full animate-spin shadow-[0_0_20px_rgba(0,200,255,0.3)]" />
+              <span className="mt-8 text-[11px] font-bold tracking-[1em] text-[#00C8FF]/40 uppercase animate-pulse">Syncing...</span>
             </div>
           </motion.div>
         )}
