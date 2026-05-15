@@ -205,9 +205,9 @@ export default function Home() {
         {/* Navbar (Cyan/Yellow Accents) */}
         <nav ref={navbarRef} className="flex w-full items-center justify-between px-10 py-5.5 pointer-events-auto" style={{ opacity: isLoaded ? 1 : 0 }}>
           <div className="flex items-center gap-4 group cursor-pointer">
-            <div className="h-12 w-12 rounded-xl bg-[#00C8FF] text-black flex items-center justify-center font-black italic shadow-[0_0_20px_rgba(0,200,255,0.4)] group-hover:scale-110 transition-transform duration-700">A</div>
+            <div className="h-12 w-12 rounded-xl bg-[#00C8FF] text-black flex items-center justify-center font-black italic shadow-[0_0_20px_rgba(0,200,255,0.4)] group-hover:scale-110 transition-transform duration-700">N</div>
             <div className="flex flex-col">
-              <span className="text-2xl font-black tracking-tighter uppercase italic leading-none text-[#E0E0E0]">Antigravity</span>
+              <span className="text-2xl font-black tracking-tighter uppercase italic leading-none text-[#E0E0E0]">NEXOGEN</span>
               <span className="text-xs font-bold tracking-[0.4em] text-[#00E0A0] opacity-40 uppercase mt-1">Spatial Neural Core</span>
             </div>
           </div>
